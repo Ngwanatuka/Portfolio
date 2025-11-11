@@ -322,7 +322,7 @@ section {
   }
   
   .experience-sub-title {
-    color: rgb(85, 85, 85);
+    color: rgb(35, 35, 35);
     font-weight: 600;
     font-size: 1.75rem;
     margin-bottom: 2rem;
@@ -332,6 +332,7 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 2rem;
   }
   
   .article-container {
@@ -352,6 +353,11 @@ section {
   
   article .icon {
     cursor: default;
+  }
+
+  article p {
+    color: rgb(55, 55, 55);
+    font-weight: 500;
   }
   
   /* PROJECTS SECTION */
