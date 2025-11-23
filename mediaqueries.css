@@ -236,6 +236,63 @@
   }
 }
 
+/* Responsive styling for GitHub Stats */
+@media screen and (max-width: 1200px) {
+  .github-stats-container {
+    gap: 1.5rem;
+  }
+
+  .stats-card {
+    padding: 1rem;
+  }
+
+  .github-stat-img {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .github-stat-img {
+    max-width: 100%;
+  }
+
+  .streak-card {
+    max-width: 100%;
+  }
+}
+
+/* Responsive styling for Certifications */
+@media screen and (max-width: 1200px) {
+  .certifications-container {
+    gap: 1.5rem;
+  }
+
+  .cert-card {
+    min-width: 250px;
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cert-card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .cert-icon {
+    font-size: 3rem;
+  }
+
+  .cert-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .skill-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
 /* Smooth animations for mobile */
 @media (prefers-reduced-motion: no-preference) {
   * {

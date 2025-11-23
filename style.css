@@ -328,10 +328,12 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 450px;
   width: 450px;
+  max-height: 600px;
   margin: auto 0;
   position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 .section__pic-container::before {
@@ -365,8 +367,10 @@ section {
   border: 4px solid var(--glass-border);
   box-shadow: var(--shadow-glow);
   transition: all var(--transition-slow);
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 600px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: center;
   background: var(--bg-secondary);
@@ -771,4 +775,135 @@ footer .nav-links a {
 
 footer .nav-links a:hover {
   color: var(--accent-primary);
+}
+
+/* GITHUB STATS SECTION */
+#github-stats {
+  position: relative;
+}
+
+.github-stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-md);
+}
+
+.stats-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+  padding: 1.5rem;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.stats-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--accent-primary);
+}
+
+.github-stat-img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.streak-card {
+  flex-basis: 100%;
+  max-width: 600px;
+}
+
+/* CERTIFICATIONS SECTION */
+#certifications {
+  position: relative;
+}
+
+.certifications-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-md);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cert-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+  padding: 2rem;
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.cert-card:hover {
+  transform: translateY(-15px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cert-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
+}
+
+.cert-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cert-year {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cert-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.cert-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.skill-tag {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
 }
