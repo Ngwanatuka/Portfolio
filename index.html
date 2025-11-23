@@ -8,8 +8,8 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>Ngwanatuka Molepo | Software Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=3" />
-  <link rel="stylesheet" href="mediaqueries.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="mediaqueries.css?v=4" />
 </head>
 
 <body>
@@ -65,6 +65,33 @@
       </div>
     </div>
   </section>
+
+  <!-- Animated Statistics Section -->
+  <section id="stats" class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-icon">🚀</div>
+        <div class="stat-number" data-target="10">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">💻</div>
+        <div class="stat-number" data-target="15">0</div>
+        <div class="stat-label">Technologies Mastered</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">📚</div>
+        <div class="stat-number" data-target="2">0</div>
+        <div class="stat-label">Years Learning</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">⚡</div>
+        <div class="stat-number" data-target="500">0</div>
+        <div class="stat-label">GitHub Commits</div>
+      </div>
+    </div>
+  </section>
+
   <section id="about">
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
@@ -448,6 +475,8 @@
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title">Contact Me</h1>
+
+    <!-- Contact Info Cards -->
     <div class="contact-info-upper-container">
       <div class="contact-info-container">
         <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
@@ -466,7 +495,32 @@
         <p><a href="https://www.linkedin.com/in/ngwanatuka-molepo-75b499259">LinkedIn</a></p>
       </div>
     </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-container">
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" id="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" id="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-color-1 submit-btn">Send Message</button>
+      </form>
+      <div id="form-status" class="form-status"></div>
+    </div>
   </section>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
+
   <footer>
     <nav>
       <div class="nav-links-container">

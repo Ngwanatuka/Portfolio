@@ -123,3 +123,113 @@ document.addEventListener('mousemove', function (e) {
     setTimeout(() => glow.remove(), 500);
   }, 100);
 });
+
+// ========== NEW FEATURES ==========
+
+// Animated Counter Statistics
+function animateCounter(element) {
+  const target = parseInt(element.getAttribute('data-target'));
+  const duration = 2000; // 2 seconds
+  const increment = target / (duration / 16); // 60fps
+  let current = 0;
+
+  const updateCounter = () => {
+    current += increment;
+    if (current < target) {
+      element.textContent = Math.floor(current);
+      requestAnimationFrame(updateCounter);
+    } else {
+      element.textContent = target;
+    }
+  };
+
+  updateCounter();
+}
+
+// Observe stats section for counter animation
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counters = entry.target.querySelectorAll('.stat-number');
+      counters.forEach(counter => {
+        if (counter.textContent === '0') {
+          animateCounter(counter);
+        }
+      });
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) {
+    statsObserver.observe(statsSection);
+  }
+});
+
+// Contact Form Handling
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('.submit-btn');
+      const originalText = submitBtn.textContent;
+
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formStatus.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
+          formStatus.className = 'form-status success';
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        formStatus.textContent = '✗ Oops! Something went wrong. Please try again or email me directly.';
+        formStatus.className = 'form-status error';
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+
+        // Hide status message after 5 seconds
+        setTimeout(() => {
+          formStatus.style.display = 'none';
+        }, 5000);
+      }
+    });
+  }
+});
+
+// Back to Top Button
+const backToTopBtn = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    backToTopBtn.classList.add('show');
+  } else {
+    backToTopBtn.classList.remove('show');
+  }
+});
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
