@@ -704,6 +704,8 @@ article p {
   margin: 2rem auto;
   padding: 2rem;
   max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
   box-shadow: var(--shadow-lg);
 }
 
