@@ -965,8 +965,10 @@ footer .nav-links a:hover {
 /* CONTACT FORM */
 .contact-form-container {
   max-width: 600px;
+  width: 100%;
   margin: 3rem auto 0;
   padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .contact-form {
@@ -976,6 +978,8 @@ footer .nav-links a:hover {
   border: 1px solid var(--glass-border);
   padding: 2rem;
   box-shadow: var(--shadow-lg);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .form-group {
