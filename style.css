@@ -4,38 +4,38 @@
 
 /* CSS VARIABLES - DESIGN SYSTEM */
 :root {
-  /* Colors - Grey Glassmorphism Theme */
-  --bg-primary: #121212;
-  --bg-secondary: #1a1a1a;
-  --bg-tertiary: #242424;
+  /* Colors - Neon Blue Glow Theme */
+  --bg-primary: #050a15;
+  --bg-secondary: #0a1128;
+  --bg-tertiary: #0f172a;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #e0e0e0 0%, #9e9e9e 100%);
-  --gradient-secondary: linear-gradient(135deg, #d4d4d4 0%, #8c8c8c 100%);
-  --gradient-accent: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
-  --gradient-bg: linear-gradient(180deg, #121212 0%, #1c1c1c 100%);
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  --gradient-secondary: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+  --gradient-accent: linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%);
+  --gradient-bg: radial-gradient(circle at center, #0a1428 0%, #030712 100%);
 
   /* Text Colors */
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --text-muted: #999999;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
 
   /* Accent Colors */
-  --accent-primary: #e0e0e0;
-  --accent-secondary: #9e9e9e;
-  --accent-cyan: #ffffff;
-  --accent-pink: #d4d4d4;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #1d4ed8;
+  --accent-cyan: #38bdf8;
+  --accent-pink: #818cf8;
 
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.15);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  /* Neon Glow & Glassmorphism */
+  --glass-bg: rgba(10, 25, 60, 0.5);
+  --glass-border: rgba(59, 130, 246, 0.4);
+  --glass-shadow: 0 0 20px rgba(59, 130, 246, 0.2), inset 0 0 15px rgba(59, 130, 246, 0.15);
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.15);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.5), inset 0 0 20px rgba(59, 130, 246, 0.3);
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -137,14 +137,14 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(18, 18, 18, 0.8);
+  background: rgba(10, 20, 40, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--glass-border);
   transition: all var(--transition-base);
 }
 
 nav.scrolled {
-  background: rgba(18, 18, 18, 0.95);
+  background: rgba(10, 20, 40, 0.95);
   box-shadow: var(--shadow-lg);
 }
 
@@ -227,7 +227,7 @@ nav.scrolled {
   position: absolute;
   top: 100%;
   right: 0;
-  background: rgba(26, 26, 26, 0.95);
+  background: rgba(15, 30, 60, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
@@ -378,7 +378,7 @@ section {
 
 .section__pic-container img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
 }
 
 .section__text {
@@ -524,6 +524,7 @@ section {
   backdrop-filter: blur(10px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   text-align: center;
   transition: all var(--transition-base);
   min-width: 200px;
@@ -531,7 +532,7 @@ section {
 
 .details-container:hover {
   transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(59, 130, 246, 0.1);
   box-shadow: var(--shadow-glow);
   border-color: var(--accent-primary);
 }
@@ -608,7 +609,7 @@ article {
 }
 
 article:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(59, 130, 246, 0.1);
   border-color: var(--accent-primary);
   transform: translateY(-5px);
 }
@@ -639,6 +640,7 @@ article p {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   transition: all var(--transition-base);
 }
 
@@ -715,13 +717,13 @@ article p {
   justify-content: center;
   gap: 1rem;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(59, 130, 246, 0.05);
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
 }
 
 .contact-info-container:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(59, 130, 246, 0.1);
   transform: translateY(-5px);
 }
 
@@ -752,7 +754,7 @@ footer {
   padding: 2rem 5%;
   margin-top: var(--spacing-lg);
   border-top: 1px solid var(--glass-border);
-  background: rgba(18, 18, 18, 0.5);
+  background: rgba(10, 20, 40, 0.5);
 }
 
 footer p {
@@ -854,13 +856,13 @@ footer .nav-links a:hover {
   transform: translateY(-15px);
   box-shadow: var(--shadow-glow);
   border-color: var(--accent-primary);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .cert-icon {
   font-size: 4rem;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
 }
 
 .cert-card h3 {
@@ -907,7 +909,7 @@ footer .nav-links a:hover {
 
 .skill-tag:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
 /* ANIMATED STATISTICS SECTION */
@@ -939,13 +941,13 @@ footer .nav-links a:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-glow);
   border-color: var(--accent-primary);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .stat-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
 }
 
 .stat-number {
@@ -992,7 +994,7 @@ footer .nav-links a:hover {
 .form-group textarea {
   width: 100%;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(59, 130, 246, 0.05);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   color: var(--text-primary);
@@ -1005,8 +1007,8 @@ footer .nav-links a:hover {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-primary);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
 .form-group input::placeholder,
